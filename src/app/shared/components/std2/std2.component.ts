@@ -1,11 +1,6 @@
 import { Component } from "@angular/core";
 import { stdArr2 } from "../../const/std2Data";
 
-
-
-
-
-
 @Component({
     selector : 'app-std2',
     templateUrl : './std2.component.html',

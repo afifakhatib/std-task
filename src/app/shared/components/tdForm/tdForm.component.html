@@ -1,0 +1,109 @@
+
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+                <form #signUp="ngForm" (ngSubmit)="onSignUp(signUp)"  class="tdForm">
+                    <div class="form-group">
+                        <label for="username">UserName <sup>*</sup></label>
+                        <input type="text" #username="ngModel" ngModel required class="form-control" 
+                        pattern="[a-zA-Z]+"
+                        name="username" id="username"
+                        minlength="8"
+                        maxlength="12">
+
+                        <ng-container 
+                        *ngIf="username.touched">
+                            <span class="text-danger"
+                        *ngIf="username.hasError('required')">
+                           UserName is required field.
+                           <!-- {{username.errors?.['required']}} -->
+                        </span>
+
+                        <span class="text-danger"
+                        *ngIf="username.hasError('pattern')">
+                            UserName must includes uppercase.
+                        </span>
+
+                        <span class="text-danger"
+                        *ngIf="username.hasError('minlength')">
+                            UserName must has {{username.errors?.['minlength'].requiredLength}} and actual length is
+                             {{username.errors?.['minlength'].actualLength}}
+                        </span>
+                        </ng-container>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email <sup>*</sup></label>
+                        <input type="text" #email="ngModel" ngModel required class="form-control" 
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        name="email" id="email">
+
+                        <ng-container 
+                        *ngIf="email.touched">
+                            <span class="text-danger"
+                            *ngIf="email.hasError('required')">
+                               Email is required field.
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="email.hasError('pattern')">
+                               Email must contains number,special char,uppercase.
+                            </span>
+                        </ng-container>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="secret">Secret Question <sup>*</sup></label>
+                        <select required name="secretquestion" id="secret" ngModel class="form-control">
+                            <option value="fav books">fav books</option>
+                            <option value="fav singer">fav singer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="answer">Answer</label>
+                        <input type="text" class="form-control" ngModel name="answer">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isSubscribe"><input type="checkbox" value="isSubscribe" id="isSubscribe"> isSubscribe</label>
+                    </div>
+
+                    <div class="form-group" 
+                    *ngFor="let mode of contactModeArr">
+                        <label [for]="mode.moc">
+                             <input
+                              type="radio" 
+                              [value]="mode.moc"
+                               ngModel 
+                               name="modeOfContact"
+                               [id]="mode.id"> 
+                             {{mode.moc}}
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                       <button type="submit"
+                        class="btn btn-success btn-block"
+                        [disabled]="signUp.invalid">
+                        Sign Up
+                       </button>
+                    </div>
+
+                    <div class="form-group">
+                        <button  
+                        type="button"
+                        (click)="onEditForm()"
+                        class="btn btn-info btn-block">
+                         Edit form
+                        </button>
+                     </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

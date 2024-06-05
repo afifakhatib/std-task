@@ -1,9 +1,6 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { stdArr } from "../../const/stdData";
 
-
-
-
 @Component({
     selector : 'app-std',
     templateUrl : './std.component.html',
