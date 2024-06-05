@@ -1,0 +1,40 @@
+
+
+<h2 class="bg-info p-3 text-center heading">
+    Ng tab by NgFor
+</h2>
+<div class="container mt-4 bg-dark p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card p-4">
+                <div class="list">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"
+                        *ngFor="let skill of skillarr"
+                        (click)="selectedSkill = skill.skillname">
+                            <a href="javascript:;" class="nav-link"
+                            [ngClass]="{
+                                active : selectedSkill.toLowerCase().includes(skill.skillname.toLowerCase())
+                            }">
+                                    {{skill.skillname}}
+                            </a>
+                        </li>
+                    </ul>
+
+                    
+                    <ng-container 
+                    *ngFor="let skill of skillarr">
+                        <div class="card mt-4"
+                        *ngIf="selectedSkill.toLowerCase().includes(skill.skillname.toLowerCase())">
+                            <div class="card-body">
+                                <p [innerHTML]="skill.content">
+                                </p>
+                            </div>
+                        </div>
+                    </ng-container>
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

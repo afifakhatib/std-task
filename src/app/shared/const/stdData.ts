@@ -1,5 +1,4 @@
-import { Istd } from "../modules/stdData.interface";
-
+import { Istd } from "../module/std.interface";
 
 
 
@@ -13,43 +12,19 @@ export let stdArr : Array<Istd> = [
     {
         fname : 'july',
         lname : 'doe',
-        email : 'jd@gmail.com',
+        email : 'jy@gmail.com',
         contact : 9766187381
     },
     {
         fname : 'may',
         lname : 'doe',
-        email : 'jd@gmail.com',
+        email : 'may@gmail.com',
         contact : 9766187381
     },
-    // {
-    //     fname : 'tony',
-    //     lname : 'doe',
-    //     email : 'jd@gmail.com',
-    //     contact : 9766187381
-    // },
-    // {
-    //     fname : 'jonathan',
-    //     lname : 'doe',
-    //     email : 'jd@gmail.com',
-    //     contact : 9766187381
-    // },   
-    // {
-    //     fname : 'mark',
-    //     lname : 'doe',
-    //     email : 'jd@gmail.com',
-    //     contact : 9766187381
-    // },
-    // {
-    //     fname : 'rose',
-    //     lname : 'doe',
-    //     email : 'jd@gmail.com',
-    //     contact : 9766187381
-    // },
-    // {
-    //     fname : 'jessica',
-    //     lname : 'doe',
-    //     email : 'jd@gmail.com',
-    //     contact : 9766187381
-    // }
+    {
+        fname : 'tony',
+        lname : 'doe',
+        email : 'td@gmail.com',
+        contact : 9766187381
+    },
 ]
